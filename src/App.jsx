@@ -30,7 +30,7 @@ function App() {
             },
           }
         );
-        //console.log(data);
+        console.log(data);
         setUserData(data);
         //console.log(userData)
       }
@@ -44,6 +44,7 @@ function App() {
   }, []);
   return (
       <Routes>
+        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/question" element={<Question />} />
