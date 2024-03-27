@@ -50,7 +50,9 @@ function login() {
 
       localStorage.setItem("token", data.token);
       navigate("/home");
+      if (data) {
         window.location.reload();
+      }
     } catch (error) {
       // alert(error?.response?.data.msg);
       setErrorMessage("Incorrect email or password");

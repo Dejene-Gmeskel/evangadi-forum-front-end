@@ -18,40 +18,34 @@ function App() {
   const checkUserLoggedIn = async () => {
     try {
       let token = localStorage.getItem("token");
-      if (token === null) {
-        localStorage.setItem("token", "");
-        token = "";
-      } else {
-        const { data } = await axios.get(
-          "/users/check",
-          {
-            headers: {
-              Authorization: "Bearer " + token,
-            },
-          }
-        );
-        console.log(data);
-        setUserData(data);
-        //console.log(userData)
+      if (!token) {
+        throw new Error("User not logged in"); // If token is not present, user is not logged in
       }
+
+      const { data } = await axios.get("/users/check", {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      });
+      setUserData(data); // Set user data if authenticated
     } catch (error) {
-      //console.log(error.data?.msg);
-      navigate("/login");
+      navigate("/login"); // Redirect to login page if user is not logged in or authentication fails
     }
   };
+
   useEffect(() => {
     checkUserLoggedIn();
   }, []);
+
   return (
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/question" element={<Question />} />
-        <Route path="/question/:id" element={<Answer />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-   
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/question" element={<Question />} />
+      <Route path="/question/:id" element={<Answer />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
