@@ -1,0 +1,10 @@
+.answer_wrapper {
+  margin-left: 250px;
+}
+.answer_wrapper a {
+  text-decoration: none;
+}
+
+.question h3 {
+  margin-top: 10px;
+}

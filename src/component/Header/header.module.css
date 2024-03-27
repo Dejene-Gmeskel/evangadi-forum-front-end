@@ -1,0 +1,95 @@
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  box-shadow: 0px 0px 5px 1px rgb(19, 16, 16);
+  z-index: 100;
+  background-color: white;
+  padding: 25px 100px;
+  width: 100%;
+  opacity: 0.95;
+}
+
+section {
+  z-index: 100;
+  position: sticky;
+  top: 0;
+}
+
+.header_container img {
+  width: 150px;
+}
+
+.navlist {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: rgb(98, 120, 120);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navlist button {
+  padding: 5px 30px;
+  border-radius: 4px;
+  border: none;
+  background-color: #516cf0;
+}
+
+.btn_blue {
+  color: white;
+  text-decoration: none;
+}
+
+.navlist button:hover {
+  background-color: #ff8500;
+  transition: 300ms;
+}
+.link {
+  color: black;
+}
+/* .hove:hover {
+  color: #ff8500 !important;
+} */
+
+.link a {
+  text-decoration: none;
+  color: black;
+}
+.link a:hover {
+  color: #ff8500 !important;
+}
+
+.logo_container {
+  margin-right: 500px;
+}
+.logo_container img {
+  margin-left: 150px;
+}
+
+.connect_block button {
+  border-radius: 10px;
+  background-color: #516cf0;
+  padding: 8px 30px;
+}
+
+.connect_block button:hover {
+  border-radius: 10px;
+  background-color: #ff8500;
+}
+
+@media (max-width: 768px) {
+  .logo_container {
+    margin-right: 0;
+  }
+}
